@@ -3,12 +3,12 @@ import ProductCard from '../components/ProductCard';
 import './Shop.css';
 
 const products = [
-  { id: 1, name: "The Celeste Gown", price: "3,250", image: "/images/dress1.png", category: "A-Line" },
-  { id: 2, name: "The Seraphina Mermaid", price: "4,100", image: "/images/dress2.png", category: "Mermaid" },
-  { id: 3, name: "Opal A-Line Pearl", price: "2,800", image: "/images/dress1.png", category: "A-Line" },
-  { id: 4, name: "Aurelia Lace Classic", price: "3,500", image: "/images/dress2.png", category: "Ball Gown" },
-  { id: 5, name: "Evelyn Silk Slip", price: "1,900", image: "/images/dress1.png", category: "Slip" },
-  { id: 6, name: "Victoria Corset", price: "4,500", image: "/images/dress2.png", category: "Ball Gown" }
+  { id: 1, name: "The Celeste Gown", price: "$3,250", image: "/images/celeste_ivory.jpg", category: "A-Line", colors: [{ hex: '#ffffff', src: '/images/celeste_ivory.jpg' }, { hex: '#f5e6e8', src: '/images/dress1_blush.png' }, { hex: '#e8e2d4', src: '/images/dress1_champagne.png' }] },
+  { id: 2, name: "The Seraphina Mermaid", price: "$4,100", image: "/images/dress2.png", category: "Mermaid", colors: [] },
+  { id: 3, name: "Opal A-Line Pearl", price: "$2,800", image: "/images/dress1.png", category: "A-Line", colors: [] },
+  { id: 4, name: "Aurelia Lace Classic", price: "$3,500", image: "/images/hero.png", category: "Ball Gown", colors: [] },
+  { id: 5, name: "Evelyn Silk Slip", price: "$1,900", image: "/images/dress1.png", category: "Slip", colors: [] },
+  { id: 6, name: "Victoria Corset", price: "$4,500", image: "/images/dress2.png", category: "Ball Gown", colors: [] }
 ];
 
 const Shop = () => {

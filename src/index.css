@@ -161,3 +161,22 @@ input:focus, textarea:focus, select:focus {
 .animate-fade-in {
   animation: fadeIn var(--transition-slow) forwards;
 }
+
+/* Global Responsive Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+@media (max-width: 500px) {
+  .product-grid { grid-template-columns: 1fr; }
+}

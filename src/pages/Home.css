@@ -106,12 +106,6 @@
   margin-bottom: var(--spacing-lg);
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
 /* Story Section - Asymmetrical */
 .story-section {
   background-color: var(--color-white);
