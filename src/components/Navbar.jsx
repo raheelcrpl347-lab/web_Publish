@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X, ShoppingBag, Search, User } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,29 +19,32 @@ const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         
-        {/* Mobile Menu Toggle */}
-        <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Logo */}
-        <Link to="/" className="navbar-logo">
-          AURA BRIDAL
-        </Link>
-
-        {/* Desktop Nav */}
+        {/* Left: Desktop Nav */}
         <nav className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
-          <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)}>Collection</Link>
-          <Link to="/custom" onClick={() => setIsMobileMenuOpen(false)}>Bespoke</Link>
-          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>Atelier</Link>
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+          <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
+          <Link to="/custom" onClick={() => setIsMobileMenuOpen(false)}>Lookbook</Link>
+          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
         </nav>
 
-        {/* CTA & Icons */}
+        {/* Center: Logo */}
+        <Link to="/" className="navbar-logo">
+          VOUGE
+        </Link>
+
+        {/* Right: Actions */}
         <div className="navbar-actions">
-          <Link to="/appointment" className="btn-primary d-none-mobile">Book Fitting</Link>
-          <button className="cart-btn" aria-label="Cart">
-            <ShoppingBag size={20} />
+          <button className="icon-btn d-none-mobile" aria-label="Search">
+            <Search size={20} strokeWidth={1.5} />
+          </button>
+          <button className="icon-btn d-none-mobile" aria-label="User">
+            <User size={20} strokeWidth={1.5} />
+          </button>
+          <button className="icon-btn" aria-label="Cart">
+            <ShoppingBag size={20} strokeWidth={1.5} />
+          </button>
+          {/* Mobile Menu Toggle */}
+          <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
           </button>
         </div>
       </div>

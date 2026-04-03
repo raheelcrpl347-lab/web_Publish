@@ -1,14 +1,20 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .product-image-container {
   position: relative;
   overflow: hidden;
-  background-color: #f0ece6;
+  background-color: var(--color-champagne);
   aspect-ratio: 3/4;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .product-image {
@@ -18,8 +24,17 @@
   transition: transform var(--transition-slow);
 }
 
+.color-tint-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  mix-blend-mode: multiply; /* Blends the color naturally over the dress image */
+  opacity: 0.8; /* Subtle tint strength */
+  transition: background-color var(--transition-fast) ease-in-out;
+  pointer-events: none; /* Let clicks pass through to the link */
+}
+
 .product-image-container:hover .product-image {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .product-actions {
@@ -27,44 +42,85 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 1rem;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   transform: translateY(100%);
-  transition: transform var(--transition-fast);
-  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  transition: transform var(--transition-fast) ease-in-out;
 }
 
 .product-image-container:hover .product-actions {
   transform: translateY(0);
 }
 
-.product-actions .btn-secondary {
-  background-color: var(--color-white);
-  border-color: var(--color-white);
-  text-align: center;
-  padding: 0.8rem;
+.btn-quick-add {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: background-color var(--transition-fast);
 }
 
-.product-actions .btn-primary {
-  text-align: center;
-  padding: 0.8rem;
+.btn-quick-add:hover {
+  background-color: #333333;
 }
 
 .product-details {
-  text-align: center;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.product-info-left {
+  flex: 1;
 }
 
 .product-name {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
 }
 
 .product-price {
   color: var(--color-text-light);
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Color Swatches */
+.product-colors {
+  display: flex;
+  gap: 0.4rem;
+  padding-top: 0.2rem;
+}
+
+.color-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  padding: 0;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-swatch.active {
+  box-shadow: 0 0 0 1px var(--color-white), 0 0 0 2px var(--color-text-dark);
+  border-color: transparent;
 }

@@ -7,72 +7,84 @@ const Home = () => {
   return (
     <div className="home-page">
       
-      {/* Hero Section */}
+      {/* High-Fashion Hero Section */}
       <section className="hero-section">
-        <div className="hero-bg" style={{ backgroundImage: "url('/images/hero.png')" }}></div>
-        <div className="hero-overlay"></div>
-        <div className="hero-content container text-center animate-fade-in">
-          <h1 className="hero-title">Find the Dress That Defines Your Moment</h1>
-          <p className="hero-subtitle">Exquisite craftsmanship for the modern bride.</p>
-          <div className="hero-cta-group">
-            <Link to="/shop" className="btn-primary">Shop Collection</Link>
-            <Link to="/appointment" className="btn-secondary">Book Appointment</Link>
+        <div className="hero-image-half" style={{ backgroundImage: "url('/images/hero.png')" }}></div>
+        <div className="hero-content-half animate-fade-in">
+          <div className="hero-text-wrapper">
+            <h4 className="hero-label">New Arrival</h4>
+            <h1 className="hero-title">Timeless Elegance</h1>
+            <p className="hero-subtitle">Discover our exclusive collection designed for the modern aesthetic. Pure, unadulterated luxury.</p>
+            <div className="hero-cta-group">
+              <Link to="/shop" className="btn-primary">Shop The Look</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="social-proof section bg-champagne text-center">
-        <div className="container">
-          <div className="stars">★★★★★</div>
-          <p className="testimonial-text">"An unforgettable experience. The dress made me feel like royalty on my special day."</p>
-          <p className="testimonial-author">- Elena R., Aura Bride</p>
-          <div className="featured-in">
-            <span>As featured in Vogue</span>
-            <span>Harper's Bazaar</span>
-            <span>Brides</span>
+      {/* Editorial Featured Categories */}
+      <section className="categories-section section container">
+        <div className="category-grid">
+          <div className="category-card">
+            <img src="/images/celeste_ivory.jpg" alt="Bridal Gowns" />
+            <div className="category-card-overlay">
+              <h3>Bridal Gowns</h3>
+              <Link to="/shop" className="btn-secondary">Explore</Link>
+            </div>
+          </div>
+          <div className="category-card">
+            <img src="/images/dress2.png" alt="Evening Wear" />
+            <div className="category-card-overlay">
+              <h3>Evening Wear</h3>
+              <Link to="/shop" className="btn-secondary">Explore</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Best Sellers */}
+      {/* Minimalism Best Sellers */}
       <section className="best-sellers section container">
         <div className="section-header text-center">
-          <h2>The Signature Collection</h2>
-          <p>Our most loved bespoke and ready-to-wear pieces</p>
+          <h2>Trending Now</h2>
         </div>
         <div className="product-grid">
-          <ProductCard id="1" name="The Celeste Gown" price="3,250" image="/images/dress1.png" />
-          <ProductCard id="2" name="The Seraphina Mermaid" price="4,100" image="/images/dress2.png" />
-          <ProductCard id="3" name="Opal A-Line Pearl" price="2,800" image="/images/dress1.png" />
-          <ProductCard id="4" name="Aurelia Lace Classic" price="3,500" image="/images/dress2.png" />
+          <ProductCard id="1" name="The Celeste Gown" price="$3,250" image="/images/celeste_ivory.jpg" colors={[
+            { hex: '#ffffff', src: '/images/celeste_ivory.jpg' }, 
+            { hex: '#f5e6e8', src: '/images/dress1_blush.png' }, 
+            { hex: '#e8e2d4', src: '/images/dress1_champagne.png' }
+          ]} />
+          <ProductCard id="2" name="The Seraphina Mermaid" price="$4,100" image="/images/dress2.png" />
+          <ProductCard id="3" name="Opal A-Line Pearl" price="$2,800" image="/images/dress1.png" />
+          <ProductCard id="4" name="Aurelia Lace Classic" price="$3,500" image="/images/hero.png" />
         </div>
-        <div className="text-center" style={{ marginTop: '3rem' }}>
+        <div className="text-center" style={{ marginTop: '4rem' }}>
           <Link to="/shop" className="btn-secondary">View All Styles</Link>
         </div>
       </section>
 
-      {/* Emotional Story Section */}
-      <section className="story-section section bg-ivory">
+      {/* Asymmetrical Editorial Story Section */}
+      <section className="story-section section">
         <div className="container story-container">
-          <div className="story-image">
-            <img src="/images/boutique.png" alt="Aura Bridal Boutique" />
-          </div>
           <div className="story-content">
-            <h2>Your Journey Begins Here</h2>
-            <p>Every Aura Bridal dress is a testament to timeless elegance, crafted meticulously for the sophisticated bride. We don't just sell dresses; we curate the feeling of absolute confidence.</p>
-            <Link to="/about" className="btn-secondary">Discover Our Atelier</Link>
+            <h2 className="story-headline">Redefining Minimalist Luxury.</h2>
+            <p>At Vouge, we believe in the power of simplicity. Every silhouette is an exploration of form and fabric, stripping away the excess to reveal the essential beauty of the wearer.</p>
+            <Link to="/about" className="link-underline">Read Our Story</Link>
+          </div>
+          <div className="story-image-wrapper">
+            <img src="/images/boutique.png" alt="Vouge Editorial" className="story-image" />
           </div>
         </div>
       </section>
 
-      {/* Urgency & Final CTA */}
-      <section className="final-cta section text-center" style={{ backgroundImage: "url('/images/hero.png')" }}>
-        <div className="cta-overlay"></div>
+      {/* High Contrast Final CTA */}
+      <section className="final-cta section text-center">
         <div className="container cta-content">
-          <h2>The Spring Collection is Limiting Fast</h2>
-          <p>Reserve your fitting before our calendar closes for the season.</p>
-          <Link to="/appointment" className="btn-primary">Start Your Bridal Journey Today</Link>
+          <h2>The Autumn Editorial</h2>
+          <p>Sign up to our newsletter for access to exclusive releases.</p>
+          <div className="newsletter-form">
+            <input type="email" placeholder="YOUR EMAIL ADDRESS" />
+            <button className="btn-primary">Subscribe</button>
+          </div>
         </div>
       </section>
 
