@@ -1,0 +1,60 @@
+.shop-header {
+  padding: 6rem 0 4rem 0;
+}
+
+.shop-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.shop-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-btn {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  color: var(--color-text-dark);
+  border-bottom-color: var(--color-text-dark);
+}
+
+.shop-sort {
+  margin-left: auto;
+}
+
+.shop-sort select {
+  font-family: var(--font-sans);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .shop-sort {
+    margin-left: 0;
+    width: 100%;
+  }
+  .shop-sort select {
+    width: 100%;
+  }
+}
